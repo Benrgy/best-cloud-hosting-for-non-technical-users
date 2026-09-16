@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jurniti Review (2026): Always-On AI Agent Hosting, Fact-Checked</title>
+<meta name="description" content="jurniti review, fact-checked: pricing from $25/mo, Firecracker microVM isolation, BYOK, 30 supported agents (OpenClaw, Claude Code, Hermes) — plus the honest downsides.">
+<meta property="og:title" content="jurniti Review (2026): Always-On AI Agent Hosting, Fact-Checked">
+<meta property="og:description" content="A facts-only jurniti review: what the microVM agent host costs, what it actually isolates, and who should skip it.">
+<meta property="og:type" content="article">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "jurniti Review (2026): Always-On AI Agent Hosting, Fact-Checked",
+  "datePublished": "2026-09-16",
+  "dateModified": "2026-09-16",
+  "inLanguage": "en",
+  "about": "jurniti, a managed AI agent hosting platform running agents in Firecracker microVMs"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is jurniti?", "acceptedAnswer": {"@type": "Answer", "text": "jurniti is managed hosting where each AI agent (OpenClaw, Claude Code, Hermes and 27 others) runs 24/7 in its own Firecracker microVM with a KVM hardware boundary, using your own model keys."}},
+    {"@type": "Question", "name": "How much does jurniti cost?", "acceptedAnswer": {"@type": "Answer", "text": "From $25/month flat ($21/month billed yearly) per agent VM, or pay-as-you-go from $0.025/hour. There is no free trial; the first plan carries a 30-day money-back guarantee."}},
+    {"@type": "Question", "name": "Is jurniti cheaper than a VPS for OpenClaw?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on usage. Running the on-demand tier 24/7 costs about $36.50/month, so the $25 flat plan wins for always-on agents. A bare VPS is cheaper but you handle provisioning, TLS and updates yourself."}},
+    {"@type": "Question", "name": "Why does isolation matter for AI agents?", "acceptedAnswer": {"@type": "Answer", "text": "Internet scans in 2026 found between 40,000 and 245,000 publicly reachable OpenClaw instances, and shared-kernel containers have documented escape vulnerabilities such as runc CVE-2024-21626."}},
+    {"@type": "Question", "name": "Can I run multiple agents on jurniti?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but every agent harness gets its own microVM and its own subscription. Three agents on the Starter plan cost 3 × $25 = $75 per month."}}
+  ]
+}
+</script>
+<style>
+:root{--sg-c-ink:#1a2333;--sg-c-body:#3b4657;--sg-c-accent:#0f6f5c;--sg-c-accent2:#b4531f;--sg-c-bg:#fbfaf7;--sg-c-card:#ffffff;--sg-c-line:#e3e0d8;--sg-c-soft:#f1efe9}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia,'Times New Roman',serif;background:var(--sg-c-bg);color:var(--sg-c-body);line-height:1.7;font-size:1.06rem}
+.sg-c-wrap{max-width:760px;margin:0 auto;padding:2.5rem 16px 4rem}
+h1,h2,h3{font-family:'Segoe UI',Helvetica,Arial,sans-serif;color:var(--sg-c-ink);line-height:1.25}
+h1{font-size:2rem;margin:1rem 0 .6rem}
+h2{font-size:1.45rem;margin:2.6rem 0 .9rem;border-bottom:2px solid var(--sg-c-line);padding-bottom:.4rem}
+h3{font-size:1.1rem;margin:1.6rem 0 .5rem}
+p{margin:0 0 1rem}
+a{color:var(--sg-c-accent)}
+.sg-c-meta{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.85rem;color:#6b7484}
+.sg-c-openquote{background:var(--sg-c-soft);border-left:4px solid var(--sg-c-accent);padding:1.1rem 1.3rem;margin:1.4rem 0;font-style:italic}
+.sg-c-openquote cite{display:block;margin-top:.5rem;font-style:normal;font-size:.85rem;font-family:'Segoe UI',Helvetica,Arial,sans-serif;color:#6b7484}
+.sg-c-capsule{background:#eef4f2;border:1px solid #cfe0db;border-radius:8px;padding:.9rem 1.1rem;margin:0 0 1.1rem;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.98rem}
+table{width:100%;border-collapse:collapse;margin:1.2rem 0;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.92rem;background:var(--sg-c-card)}
+th,td{border:1px solid var(--sg-c-line);padding:.55rem .7rem;text-align:left;vertical-align:top}
+th{background:var(--sg-c-soft);color:var(--sg-c-ink)}
+.sg-c-fig{background:var(--sg-c-card);border:1px solid var(--sg-c-line);border-radius:10px;padding:1.1rem;margin:1.4rem 0}
+.sg-c-fig figcaption{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.82rem;color:#6b7484;margin-top:.6rem}
+.sg-c-calc{background:var(--sg-c-card);border:2px solid var(--sg-c-accent);border-radius:10px;padding:1.2rem;margin:1.6rem 0;font-family:'Segoe UI',Helvetica,Arial,sans-serif}
+.sg-c-calc label{font-weight:600;color:var(--sg-c-ink);display:block;margin-bottom:.4rem}
+.sg-c-calc input[type=range]{width:100%}
+.sg-c-calcrow{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:.9rem}
+.sg-c-calcbox{flex:1 1 140px;border:1px solid var(--sg-c-line);border-radius:8px;padding:.7rem;text-align:center}
+.sg-c-calcbox b{display:block;font-size:1.25rem;color:var(--sg-c-ink)}
+.sg-c-calcbox.sg-c-win{border-color:var(--sg-c-accent);background:#eef4f2}
+.sg-c-calcbox small{color:#6b7484}
+.sg-c-verdict{font-size:.8rem;margin-top:.6rem;color:#6b7484}
+ul{margin:0 0 1rem 1.2rem}
+li{margin-bottom:.55rem}
+.sg-c-pros li::marker{content:"✓ ";color:var(--sg-c-accent)}
+.sg-c-cons li::marker{content:"✗ ";color:var(--sg-c-accent2)}
+.sg-c-src{font-size:.8rem;color:#6b7484}
+.sg-c-method{border-top:2px solid var(--sg-c-line);margin-top:3rem;padding-top:1.2rem;font-size:.92rem}
+.sg-c-bar{fill:var(--sg-c-accent)}
+@media (max-width:600px){h1{font-size:1.55rem}.sg-c-wrap{padding-top:1.4rem}}
+</style>
+</head>
+<body>
+<main class="sg-c-wrap">
+<article>
+
+<p class="sg-c-meta">Last updated: September 16, 2026 · Facts-only review — every figure carries a source. <a href="#sg-c-methodology">How this jurniti review was made</a></p>
+
+<h1>jurniti Review (2026): Always-On AI Agent Hosting, Fact-Checked</h1>
+
+<div class="sg-c-openquote">
+"the microVM/KVM boundary and BYOK-stays-in-guest framing is a genuinely stronger isolation story than most &ldquo;agent sandbox&rdquo; products that are just a shared container with an env var."
+<cite>— Gal Dayan, reacting to the <a href="https://www.producthunt.com/products/jurniti" rel="nofollow">jurniti launch on Product Hunt</a>, September 2026 <span class="sg-c-src">[F011]</span></cite>
+</div>
+
+<p>This jurniti review looks at a service that is only days old: jurniti appeared on Product Hunt around September 13, 2026, and had 46 upvotes when we checked on September 15 <span class="sg-c-src">(<a href="https://www.producthunt.com/products/jurniti" rel="nofollow">Product Hunt</a>, F011)</span>. The pitch: your AI agents — OpenClaw, Claude Code, Hermes and 27 others — run 24/7 in their own Firecracker microVM, from $25 per month, with your own model keys <span class="sg-c-src">(<a href="https://www.jurniti.com/">jurniti.com</a>, F002, F007)</span>.</p>
+
+<p>The timing is no accident. Security researchers spent 2026 counting publicly exposed OpenClaw instances. Their scans found anywhere from 40,000 to 245,000 of them, depending on the month and method <span class="sg-c-src">(<a href="https://www.infosecurity-magazine.com/news/researchers-40000-exposed-openclaw/">Infosecurity Magazine</a>, <a href="https://www.bitdefender.com/en-us/blog/hotforsecurity/135k-openclaw-ai-agents-exposed-online">Bitdefender</a>, <a href="https://www.penligent.ai/hackinglabs/over-220000-openclaw-instances-exposed-to-the-internet-why-agent-runtimes-go-naked-at-scale/">Penligent</a>, <a href="https://cybersecuritynews.com/openclaw-chain-vulnerabilities/">Cybersecurity News</a>, F001)</span>. People clearly want always-on agents. Many are hosting them badly. That is the gap jurniti steps into. We have not run our own long-term test. This article sticks to what is documented, and links every claim.</p>
+
+<figure class="sg-c-fig">
+<svg viewBox="0 0 640 200" role="img" aria-label="Bar chart: US monthly searches for 'self-hosted ai agent' from September 2025 (50) to August 2026 (27,100)">
+<text x="8" y="16" font-family="Segoe UI,Arial,sans-serif" font-size="13" fill="#1a2333" font-weight="bold">US searches per month: "self-hosted ai agent"</text>
+<g font-family="Segoe UI,Arial,sans-serif" font-size="10" fill="#6b7484">
+<rect class="sg-c-bar" x="30"  y="168.5" width="34" height="1.5"/><text x="30"  y="192">Sep25</text>
+<rect class="sg-c-bar" x="80"  y="168.5" width="34" height="1.5"/><text x="80"  y="192">Okt</text>
+<rect class="sg-c-bar" x="130" y="168.5" width="34" height="1.5"/><text x="130" y="192">Nov</text>
+<rect class="sg-c-bar" x="180" y="168.5" width="34" height="1.5"/><text x="180" y="192">Dec</text>
+<rect class="sg-c-bar" x="230" y="168.5" width="34" height="1.5"/><text x="230" y="192">Jan26</text>
+<rect class="sg-c-bar" x="280" y="167.5" width="34" height="2.5"/><text x="280" y="192">Feb</text>
+<rect class="sg-c-bar" x="330" y="163.3" width="34" height="6.7"/><text x="330" y="192">Mar</text>
+<rect class="sg-c-bar" x="380" y="168.5" width="34" height="1.5"/><text x="380" y="192">Apr</text>
+<rect class="sg-c-bar" x="430" y="168.5" width="34" height="1.5"/><text x="430" y="192">May</text>
+<rect class="sg-c-bar" x="480" y="168.5" width="34" height="1.5"/><text x="480" y="192">Jun</text>
+<rect class="sg-c-bar" x="530" y="128.1" width="34" height="41.9"/><text x="530" y="192">Jul</text>
+<rect class="sg-c-bar" x="580" y="30"    width="34" height="140"/><text x="580" y="192">Aug</text>
+<text x="576" y="24" fill="#0f6f5c" font-weight="bold">27,100</text>
+<text x="524" y="122" fill="#0f6f5c">8,100</text>
+<text x="326" y="158">1,300</text>
+</g>
+</svg>
+<figcaption>Monthly US search volume for "self-hosted ai agent": from 50 searches in September 2025 to 27,100 in August 2026. Source: DataForSEO Labs keyword data (US, retrieved September 15, 2026) — fact F013. Chart rendered from the source figures, not AI-generated.</figcaption>
+</figure>
+
+<h2 id="sg-c-compare">How does jurniti compare to a VPS or a Docker-based agent host?</h2>
+<div class="sg-c-capsule">jurniti sits between a bare VPS and typical managed agent platforms. Against a VPS it trades price for zero setup and per-tenant microVM isolation. Against Docker-based managed hosts it argues one thing: containers share a kernel, microVMs do not — and your API keys never pass through jurniti's account.</div>
+
+<p>The comparison that matters is not feature lists. It is the isolation model, and who holds the keys. (Agent hosting is a different animal from ordinary <a href="./">cloud hosting for websites</a> — the agent holds credentials and acts on its own.) Shared-kernel containers have documented escape paths: runc CVE-2024-21626, nicknamed "Leaky Vessels", is the standing example <span class="sg-c-src">(<a href="https://nvd.nist.gov/vuln/detail/CVE-2024-21626">NVD</a>, F012)</span>. jurniti's answer is one Firecracker microVM per tenant. That is the same virtualization primitive AWS uses for Lambda, here on nested-virtualization EC2 hosts in AWS us-west-2 <span class="sg-c-src">(<a href="https://www.jurniti.com/">jurniti.com</a>, F005 — vendor description)</span>.</p>
+
+<table>
+<caption class="sg-c-src">Three ways to run an always-on agent, on the facts available (F002, F004, F005, F006, F017)</caption>
+<thead><tr><th></th><th>Bare VPS (DIY)</th><th>Typical container-based host</th><th>jurniti</th></tr></thead>
+<tbody>
+<tr><td>Isolation</td><td>Whole VM is yours, but you configure everything</td><td>Container on a shared kernel</td><td>Dedicated Firecracker microVM per tenant (vendor claim, F005)</td></tr>
+<tr><td>Model keys</td><td>Yours, on your box</td><td>Often proxied through the platform's account</td><td>BYOK — key lives inside your VM, no token markup (vendor claim, F006)</td></tr>
+<tr><td>Setup</td><td>Firewall, TLS, systemd, updates — your weekend</td><td>Minutes</td><td>Provisioned in ~3 minutes after payment (vendor claim, F005)</td></tr>
+<tr><td>Cost for one always-on agent</td><td>Varies; often below $25/mo for the hardware alone</td><td>Varies</td><td>$25/mo flat, or ~$36.50/mo if you ran the hourly tier 24/7 (F002, F004)</td></tr>
+<tr><td>Region choice</td><td>Anywhere your provider operates</td><td>Varies</td><td>us-west-2 only, today (F017)</td></tr>
+</tbody>
+</table>
+
+<h3>Flat plan or pay-as-you-go? Calculate your break-even</h3>
+<div class="sg-c-calc" id="sg-c-calcroot">
+<label for="sg-c-hours">How many hours per month will your agent actually run? <span id="sg-c-hoursval">300</span> h</label>
+<input type="range" id="sg-c-hours" min="10" max="730" step="10" value="300">
+<div class="sg-c-calcrow">
+<div class="sg-c-calcbox" id="sg-c-box-od"><small>On-Demand $0.05/h</small><b id="sg-c-od">$15.00</b><small>never interrupted</small></div>
+<div class="sg-c-calcbox" id="sg-c-box-spot"><small>Spot $0.025/h</small><b id="sg-c-spot">$7.50</b><small>queued when busy</small></div>
+<div class="sg-c-calcbox" id="sg-c-box-flat"><small>Starter flat</small><b>$25.00</b><small>always on, fixed</small></div>
+</div>
+<p class="sg-c-verdict" id="sg-c-calcverdict"></p>
+<p class="sg-c-verdict">Rates from the jurniti pricing page, September 2026: on-demand $0.05/h, spot $0.025/h, billed per second (60-second minimum), Starter sizing; flat Starter $25/mo (F002, F004). Spot can queue when no warm capacity is available (F004).</p>
+</div>
+
+<h2 id="sg-c-specs">What do you get for $25 a month? Specs and pricing</h2>
+<div class="sg-c-capsule">Every plan is the full platform with BYOK and no feature gates. Starter ($25/mo) gives 1 vCPU, 2 GiB RAM and 10 GiB SSD; Pro ($49/mo) doubles compute and adds a custom subdomain; annual prepay knocks two months off. There is no free trial — the safety net is a 30-day money-back guarantee on your first plan.</div>
+
+<table>
+<caption class="sg-c-src">jurniti pricing as published on <a href="https://www.jurniti.com/">jurniti.com</a>, September 2026 (F002, F003, F004, F008)</caption>
+<thead><tr><th>Plan</th><th>Monthly</th><th>Yearly</th><th>Hardware</th><th>Notable</th></tr></thead>
+<tbody>
+<tr><td>Starter</td><td>$25/mo</td><td>$21/mo ($250/yr)</td><td>1 vCPU · 2 GiB RAM · 10 GiB SSD</td><td>The default tier</td></tr>
+<tr><td>Pro</td><td>$49/mo</td><td>$41/mo ($490/yr)</td><td>2 vCPU · 6 GiB RAM · 50 GiB SSD</td><td>Custom subdomain with TLS</td></tr>
+<tr><td>Max</td><td>not published</td><td>not published</td><td>4 vCPU · 12 GiB RAM · 100 GiB SSD</td><td>Daily snapshot</td></tr>
+<tr><td>On-Demand</td><td colspan="2">$0.05/hour, per-second billing</td><td>Starter sizing</td><td>Prepaid credits from $10</td></tr>
+<tr><td>Spot</td><td colspan="2">$0.025/hour, per-second billing</td><td>Starter sizing</td><td>May queue for capacity</td></tr>
+</tbody>
+</table>
+
+<p>The harness list covers 30 open-source agent runtimes: ten autonomous, always-on agents (Hermes, Headlong, Exo, OpenClaw, Paperclip, Mastra, OpenScience, QM and others) and twenty coding agents (Claude Code, Claude Desktop, Codex CLI, Gemini CLI, Goose, Aider, Cline, Cursor Agent, Devin, GitHub Copilot CLI and more) <span class="sg-c-src">(<a href="https://www.jurniti.com/">jurniti.com</a>, F007)</span>. Each harness runs in its own VM, with its own subscription. jurniti's FAQ is direct about it: Hermes + OpenClaw + Pi on Starter is 3 × $25 = $75 per month <span class="sg-c-src">(F015)</span>.</p>
+
+<p>Beyond single agents there are three optional sidecars, each in its own microVM: Memory (Obsidian, gbrain or mem0, from $19/mo), Observability (self-hosted Latitude or Langfuse) and Communication (Buzz or Herdr) <span class="sg-c-src">(F009)</span>. There is also a template marketplace — "a GitHub for agent behavior" — where you fork someone's working agent configuration into a VM of your own; every fork is a new $25+/mo subscription <span class="sg-c-src">(<a href="https://www.jurniti.com/templates">jurniti.com/templates</a>, F016)</span>. A documented swarm mode boots cohorts of isolated workers from the CLI; the published example dispatches one brief to 50 spot workers and collects one output file per agent <span class="sg-c-src">(F010)</span>.</p>
+
+<h2 id="sg-c-use">What is it like to use jurniti? What the record shows</h2>
+<div class="sg-c-capsule">We have not run jurniti ourselves, so this section reports only the documented flow and what early users said in public. Onboarding is four CLI commands; provisioning is claimed at about three minutes; the two substantive launch-week comments both single out the BYOK-inside-the-VM design as the strong point.</div>
+
+<p>The documented path from zero to a running agent is short. Install the CLI with one curl command. Then run <code>jurniti login</code>, <code>jurniti billing add-card</code>, <code>jurniti up</code>, and <code>jurniti auth</code> to place your model key inside the VM <span class="sg-c-src">(<a href="https://www.jurniti.com/docs">jurniti docs</a>, F005)</span>. After Stripe confirms, an auto-provisioner boots the microVM. jurniti claims about three minutes with no human in the loop, and a 124 ms VM boot time. Both figures are the vendor's own <span class="sg-c-src">(F005)</span>.</p>
+
+<p>Early public reactions are thin — the product is days old — but consistent in what they praise. Besides the isolation comment quoted at the top, launch commenter Elsa Jonathan wrote: "I like that you can bring your own model keys. Keeping those keys inside the guest instead of sharing them across environments is a thought touch." <span class="sg-c-src">(<a href="https://www.producthunt.com/products/jurniti" rel="nofollow">Product Hunt</a>, F011)</span>. There are no independent performance benchmarks yet. When they appear, this review will be updated.</p>
+
+<h2 id="sg-c-verdict-h2">jurniti review verdict: who should use it — and who should not?</h2>
+<div class="sg-c-capsule">On the documented facts, jurniti makes sense if you already run an always-on agent and want hardware isolation without sysadmin work. It is hard to justify if you need EU data residency, want one cheap box for several agents, or prefer to wait until a days-old service has a track record.</div>
+
+<ul class="sg-c-pros">
+<li><strong>Per-tenant microVM isolation</strong> instead of a shared-kernel container — the design answers a real, documented problem: 40,000–245,000 exposed agent instances found in 2026 scans <span class="sg-c-src">(F001, F005)</span>.</li>
+<li><strong>BYOK with no token markup</strong> — you pay your model provider directly; keys stay in your VM, per the vendor <span class="sg-c-src">(F006)</span>.</li>
+<li><strong>Flat, predictable pricing</strong> — $25/mo always-on beats its own hourly tier (~$36.50/mo at 24/7), and per-second spot billing suits part-time agents <span class="sg-c-src">(F002, F004)</span>.</li>
+<li><strong>30-day money-back on the first plan</strong>, refunds processed within one business day, per the pricing page <span class="sg-c-src">(F008)</span>.</li>
+</ul>
+
+<ul class="sg-c-cons">
+<li><strong>Costs stack per agent</strong> — every harness is its own VM and subscription; three agents cost $75/mo on Starter. Documented in jurniti's own FAQ <span class="sg-c-src">(F015)</span>.</li>
+<li><strong>One region: AWS us-west-2</strong> — the site states more regions come only when regional revenue covers a second box. EU users get US data locality and latency <span class="sg-c-src">(F017)</span>.</li>
+<li><strong>No free trial</strong> — you pay first, then evaluate inside the refund window <span class="sg-c-src">(F008)</span>.</li>
+<li><strong>No track record</strong> — the service launched around September 13, 2026; isolation and uptime claims are the vendor's own and independent benchmarks do not exist yet <span class="sg-c-src">(F011, F005)</span>.</li>
+</ul>
+
+<p>In line with the facts-only approach of this jurniti review, we give no numeric score. There is no basis for one without a long-term test or a body of collected user ratings. The architecture arguments are coherent, and the pricing is transparent. The open question is execution over time, which only a track record can answer.</p>
+
+<h2 id="sg-c-faq">Frequently asked questions</h2>
+<h3>What is jurniti?</h3>
+<p>Managed hosting where each AI agent — OpenClaw, Claude Code, Hermes and 27 others — runs 24/7 in its own Firecracker microVM with a KVM hardware boundary, using your own model keys <span class="sg-c-src">(F005, F006, F007)</span>.</p>
+<h3>How much does jurniti cost?</h3>
+<p>From $25/month flat ($21/month billed yearly) per agent VM, or pay-as-you-go from $0.025/hour with prepaid credits from $10. No free trial; 30-day money-back on the first plan <span class="sg-c-src">(F002, F004, F008)</span>.</p>
+<h3>Is jurniti cheaper than a VPS for OpenClaw?</h3>
+<p>For an always-on agent, the $25 flat plan undercuts jurniti's own hourly tier (~$36.50/month at 24/7). A bare VPS can be cheaper in cash but adds firewall, TLS, persistence and update work — the trade is money versus sysadmin time <span class="sg-c-src">(F002, F004)</span>.</p>
+<h3>Why does isolation matter for AI agents?</h3>
+<p>2026 internet scans found between 40,000 and 245,000 publicly reachable OpenClaw instances, and shared-kernel containers carry documented escape vulnerabilities such as runc CVE-2024-21626 <span class="sg-c-src">(F001, F012)</span>.</p>
+<h3>Can I run multiple agents on one jurniti plan?</h3>
+<p>No — each harness gets its own microVM and its own subscription. jurniti deliberately does not bundle harnesses in one VM, citing the isolation boundary and Starter-tier resources <span class="sg-c-src">(F015)</span>.</p>
+
+<section class="sg-c-method" id="sg-c-methodology">
+<h2>Methodology &amp; transparency</h2>
+<p>This is a facts-only review, researched on September 15, 2026. We did not run a paid jurniti instance for this article. Every figure is drawn from a dated, linked source: pricing and features from the <a href="https://www.jurniti.com/">jurniti website</a> and <a href="https://www.jurniti.com/docs">docs</a>, launch traction from <a href="https://www.producthunt.com/products/jurniti" rel="nofollow">Product Hunt</a>, exposure statistics from four independent security publications (<a href="https://www.infosecurity-magazine.com/news/researchers-40000-exposed-openclaw/">Infosecurity Magazine</a>, <a href="https://www.bitdefender.com/en-us/blog/hotforsecurity/135k-openclaw-ai-agents-exposed-online">Bitdefender</a>, <a href="https://www.penligent.ai/hackinglabs/over-220000-openclaw-instances-exposed-to-the-internet-why-agent-runtimes-go-naked-at-scale/">Penligent</a>, <a href="https://cybersecuritynews.com/openclaw-chain-vulnerabilities/">Cybersecurity News</a>), the container-escape reference from the <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-21626">National Vulnerability Database</a>, and search-demand figures from DataForSEO Labs (US, retrieved September 15, 2026). Where sources conflict — the exposed-instance counts range from 40,000 to 245,000 — we show the range instead of picking a number. Claims only the vendor can verify (boot times, key handling) are labeled as vendor claims. Bracketed codes such as [F001] refer to entries in our internal fact sheet.</p>
+<p>AI assistance was used in researching and drafting this article; all facts were checked against the linked sources. This article contains no affiliate links; jurniti did not pay for, request, or see this review before publication.</p>
+</section>
+
+</article>
+</main>
+<script>
+(function(){
+var h=document.getElementById('sg-c-hours'),hv=document.getElementById('sg-c-hoursval'),
+od=document.getElementById('sg-c-od'),sp=document.getElementById('sg-c-spot'),
+bo=document.getElementById('sg-c-box-od'),bs=document.getElementById('sg-c-box-spot'),
+bf=document.getElementById('sg-c-box-flat'),v=document.getElementById('sg-c-calcverdict');
+function fmt(n){return '$'+n.toFixed(2);}
+function upd(){
+var hrs=parseInt(h.value,10);hv.textContent=hrs;
+var cOd=hrs*0.05,cSp=hrs*0.025,cFl=25;
+od.textContent=fmt(cOd);sp.textContent=fmt(cSp);
+[bo,bs,bf].forEach(function(b){b.classList.remove('sg-c-win');});
+var min=Math.min(cOd,cSp,cFl);
+if(min===cSp)bs.classList.add('sg-c-win');else if(min===cOd)bo.classList.add('sg-c-win');else bf.classList.add('sg-c-win');
+if(cFl<=cOd&&cFl<=cSp){v.textContent='At '+hrs+' h/month the $25 flat plan is the cheapest never-interrupted option.';}
+else if(cSp<cFl){v.textContent='At '+hrs+' h/month spot is cheapest ('+fmt(cSp)+') — if you can tolerate queueing. On-demand break-even with flat is at 500 h/month.';}
+else{v.textContent='At '+hrs+' h/month on-demand ('+fmt(cOd)+') stays under the flat plan; break-even is 500 h/month.';}
+}
+h.addEventListener('input',upd);upd();
+})();
+</script>
+</body>
+</html>
